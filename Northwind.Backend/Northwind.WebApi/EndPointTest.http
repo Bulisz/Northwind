@@ -1,0 +1,14 @@
+﻿
+@api = https://localhost:5001/Northwind
+
+###
+
+GET {{api}}/GetAllProducts
+
+###
+
+GET {{api}}/GetAllSupplier
+
+###
+
+GET {{api}}/GetOrdersOfSupplier/1
