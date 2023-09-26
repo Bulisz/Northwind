@@ -2,7 +2,7 @@ import {
     getAllSupplier,
     getOrdersOfSupplier,
   } from "../services/NorthwindService";
-  import { useState, useEffect } from "react";
+  import { useState, useEffect, Fragment } from "react";
   import { SupplierOrdersModel } from "../models/SupplierOrdersModel";
   import { SupplierModel } from "../models/SupplierModel";
   import "./Supplier.css";
@@ -18,14 +18,16 @@ import {
     }, []);
   
     function supplierChangeHandler(supplierId: string) {
-      getOrdersOfSupplier(+supplierId).then(res => setSupplierOrders(res));
+      if(!isNaN(+supplierId)){
+        getOrdersOfSupplier(+supplierId).then(res => setSupplierOrders(res));
+      }
     }
   
     return (
-      <div>
+      <Fragment>
         <label>Choose a supplier:</label>
         <select onChange={(event) => supplierChangeHandler(event.target.value)}>
-            <option disabled selected> -- Supplier list-- </option>
+            <option>-- Supplier list--</option>
             {suppliers.map((supplier) => (
                 <option key={supplier.supplierId} value={supplier.supplierId}>
                     {supplier.companyName}
@@ -48,7 +50,7 @@ import {
             ))}
           </tbody>
         </table>
-      </div>
+      </Fragment>
     );
   }
   

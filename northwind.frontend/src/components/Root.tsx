@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar";
+import { Fragment } from "react";
 
 function RootLayout() {
   return (
-    <div>
+    <Fragment>
       <NavBar />
       <Outlet />
-    </div>
+    </Fragment>
   );
 }
 

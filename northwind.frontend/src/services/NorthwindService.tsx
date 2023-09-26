@@ -3,7 +3,7 @@ import { ProductDetailsModel } from '../models/ProductDetailsModel';
 import { SupplierModel } from '../models/SupplierModel';
 import { SupplierOrdersModel } from '../models/SupplierOrdersModel';
 
-const BASE_URL = 'https://localhost:5001/Northwind'
+const BASE_URL = process.env.REACT_APP_DEV_BASE_URL
 
 export async function getAllProducts(): Promise<Array<ProductDetailsModel>> {
     const response = await axios.get<Array<ProductDetailsModel>>(`${BASE_URL}/GetAllProducts`);

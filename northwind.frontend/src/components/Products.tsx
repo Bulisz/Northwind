@@ -1,6 +1,6 @@
 import { ProductDetailsModel } from "../models/ProductDetailsModel";
 import { getAllProducts } from "../services/NorthwindService";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import "./Products.css";
 
 function Products({}) {
@@ -20,7 +20,7 @@ function Products({}) {
   }
 
   return (
-    <div>
+    <Fragment>
       <label>Filter product name:</label>
       <input type="text" onChange={event => filterProductHandler(event.target.value)}></input>
       <table>
@@ -47,7 +47,7 @@ function Products({}) {
           ))}
         </tbody>
       </table>
-    </div>
+    </Fragment>
   );
 }
 
