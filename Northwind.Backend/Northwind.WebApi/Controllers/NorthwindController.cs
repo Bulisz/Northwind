@@ -33,8 +33,8 @@ public class NorthwindController : ControllerBase
         }
     }
 
-    [HttpGet(nameof(GetAllSupplier))]
-    public async Task<ActionResult<IEnumerable<SupplierDTO>>> GetAllSupplier()
+    [HttpGet(nameof(GetAllSuppliers))]
+    public async Task<ActionResult<IEnumerable<SupplierDTO>>> GetAllSuppliers()
     {
         try
         {

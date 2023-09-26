@@ -7,7 +7,7 @@ GET {{api}}/GetAllProducts
 
 ###
 
-GET {{api}}/GetAllSupplier
+GET {{api}}/GetAllSuppliers
 
 ###
 
