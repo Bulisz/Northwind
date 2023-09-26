@@ -28,8 +28,8 @@ function Products({}) {
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Supplier</th>
             <th>Category</th>
+            <th>Supplier</th>
             <th>Quantity Per Unit</th>
             <th>Unit Price</th>
           </tr>
@@ -39,10 +39,10 @@ function Products({}) {
             <tr key={product.productId}>
               <td>{product.productId}</td>
               <td>{product.productName}</td>
-              <td>{product.supplierName}</td>
               <td>{product.categoryName}</td>
+              <td>{product.supplierName}</td>
               <td>{product.quantityPerUnit}</td>
-              <td>{product.unitPrice}</td>
+              <td>$ {product.unitPrice}</td>
             </tr>
           ))}
         </tbody>
