@@ -23,10 +23,6 @@ public class NorthwindController : ControllerBase
             var products = await _service.GetAllProductsAsync();
             return Ok(products);
         }
-        catch (TaskCanceledException)
-        {
-            return NotFound("No connection with the northwind server");
-        }
         catch (Exception ex)
         {
             return StatusCode(500, ex.Message);
@@ -41,10 +37,6 @@ public class NorthwindController : ControllerBase
             var suppliers = await _service.GetAllSupplierAsync();
             return Ok(suppliers);
         }
-        catch (TaskCanceledException)
-        {
-            return NotFound("No connection with the northwind server");
-        }
         catch (Exception ex)
         {
             return StatusCode(500, ex.Message);
@@ -56,12 +48,8 @@ public class NorthwindController : ControllerBase
     {
         try
         {
-            var suppliers = await _service.GetOrdersOfSupplierAsync(supplierId);
-            return Ok(suppliers);
-        }
-        catch (TaskCanceledException)
-        {
-            return NotFound("No connection with the northwind server");
+            var orders = await _service.GetOrdersOfSupplierAsync(supplierId);
+            return Ok(orders);
         }
         catch (Exception ex)
         {

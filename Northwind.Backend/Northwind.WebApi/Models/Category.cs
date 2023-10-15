@@ -1,6 +1,8 @@
-﻿namespace Northwind.WebApi.Models;
+﻿using Northwind.WebApi.Models.Base;
 
-public class Category
+namespace Northwind.WebApi.Models;
+
+public sealed class Category : NorthwindEntry
 {
     public int CategoryId { get; set; }
     public string CategoryName { get; set; } = string.Empty;

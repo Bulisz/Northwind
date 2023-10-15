@@ -1,6 +1,8 @@
-﻿namespace Northwind.WebApi.Models;
+﻿using Northwind.WebApi.Models.Base;
 
-public class OrderDetail
+namespace Northwind.WebApi.Models;
+
+public sealed class OrderDetail : NorthwindEntry
 {
     public int OrderId { get; set; }
     public int ProductId { get; set; }

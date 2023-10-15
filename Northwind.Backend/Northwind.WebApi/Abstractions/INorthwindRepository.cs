@@ -1,11 +1,9 @@
 ﻿using Northwind.WebApi.Models;
+using Northwind.WebApi.Models.Base;
 
 namespace Northwind.WebApi.Abstractions;
 
 public interface INorthwindRepository
 {
-    Task<IEnumerable<Product>> GetAllProductsAsync();
-    Task<IEnumerable<OrderDetail>> GetAllOrderDetailsAsync();
-    Task<IEnumerable<Supplier>> GetAllSuppliersAsync();
-    Task<IEnumerable<Category>> GetAllCategoriesAsync();
+    Task<List<T>> GetAllEntriesAsync<T>() where T : NorthwindEntry;
 }

@@ -4,6 +4,10 @@ table {
   width: 100%;
 }
 
+thead {
+  background-color: dimgray;
+}
+
 td,
 th {
   border: 1px solid #dddddd;
@@ -26,3 +30,16 @@ select {
   border-collapse: collapse;
   padding: 0.5rem;
 }
+
+h3 {
+  animation-name:blink;
+  width:280px;
+  animation-duration:2s;
+  animation-timing-function:ease-in;
+  animation-iteration-count:Infinite;
+}
+
+@keyframes blink{
+  0%{color:black;}
+  50%{color:white;}
+  100%{color:black;}}

@@ -5,24 +5,28 @@ import "./Products.css";
 
 function Products({}) {
   const [products, setProducts] = useState(Array<ProductDetailsModel>);
-  const [filteredProducts, setfilteredProducts] = useState(Array<ProductDetailsModel>);
+  const [filteredProducts, setFilteredProducts] = useState(Array<ProductDetailsModel>);
+  const [isLoading, setIsloading] = useState(Boolean)
 
   useEffect(() => {
+    setIsloading(true)
     getAllProducts().then(res => {
       setProducts(res);
-      setfilteredProducts(res);
+      setFilteredProducts(res);
+      setIsloading(false)
     });
   }, []);
 
   function filterProductHandler(filteredName: string){
     const newFilteredList = products.filter(product => product.productName.toLowerCase().startsWith(filteredName.toLowerCase()));
-    setfilteredProducts(newFilteredList);
+    setFilteredProducts(newFilteredList);
   }
 
   return (
     <Fragment>
       <label>Filter product name:</label>
       <input type="text" onChange={event => filterProductHandler(event.target.value)}></input>
+      {isLoading ? <h3>. . . loading . . .</h3> :
       <table>
         <thead>
           <tr>
@@ -46,7 +50,7 @@ function Products({}) {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>}
     </Fragment>
   );
 }

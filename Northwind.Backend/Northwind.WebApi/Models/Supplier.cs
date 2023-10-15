@@ -1,6 +1,8 @@
-﻿namespace Northwind.WebApi.Models;
+﻿using Northwind.WebApi.Models.Base;
 
-public class Supplier
+namespace Northwind.WebApi.Models;
+
+public sealed class Supplier : NorthwindEntry
 {
     public int SupplierId { get; set; }
     public string CompanyName { get; set; } = string.Empty;
